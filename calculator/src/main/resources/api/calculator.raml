@@ -1,0 +1,106 @@
+#%RAML 1.0
+title: Calculator
+version: v0
+protocols:
+  - HTTP
+
+/addition:
+  get:
+    queryParameters:
+      number1:
+        required: true
+        type: integer
+      number2:
+        required: true
+        type: integer
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "result" : "addition is 20"
+              }
+      400:
+         body:
+          application/json:
+            example:
+              {
+                "result" : "bad request"
+              }
+  /substration:
+    patch:
+      queryParameters:
+        number1:
+          required: true
+          type: integer
+        number2:
+          required: true
+          type: integer
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                {
+                  "result" : "substration is 0"
+                }
+        400:
+          body:
+            application/json:
+              example:
+                {
+                  "result" : "bad request"
+                }
+        
+
+  /multiplication:
+    put:
+      queryParameters:
+        number1:
+          required: true
+          type: integer
+        number2:
+          required: true
+          type: integer
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                {
+                  "result" : "multiplication is 0"
+                }
+        400:
+          body:
+            application/json:
+              example:
+                {
+                  "result" : "bad request"              
+                }                                  
+  /division:
+    delete:
+      queryParameters:
+        number1:
+          required: true
+          type: integer
+        number2:
+          required: true
+          type: integer
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                {
+                  "result" : "division is 0"
+                }
+        400:
+          body:
+            application/json:
+              example:
+                {
+                  "result" : "bad request"
+                }
+                
+                                        
